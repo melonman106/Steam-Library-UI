@@ -1,0 +1,96 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+:root {
+  --steam-dark: #1b2838;
+  --steam-blue: #1a9fff;
+  --steam-light-blue: #66c0f4;
+  --steam-bg: #171a21;
+  --steam-green: #75b022;
+  --steam-sidebar: #212429;
+  --steam-input: #121a24;
+  --steam-nav: #3d4450;
+  --steam-header: #171a21;
+  --steam-text: #c6d4df;
+  --steam-text-dim: #8f98a0;
+  --steam-border: rgba(255, 255, 255, 0.05);
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--steam-bg);
+  color: var(--steam-text);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#root {
+  height: 100%;
+}
+/* Steam-style scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #3d4450;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4d5666;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3d4450 transparent;
+}
+input::placeholder {
+  color: #556772;
+  font-style: normal;
+}
+/* Game item hover reveal for remove button */
+.game-item-row .remove-btn {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.game-item-row:hover .remove-btn {
+  opacity: 1;
+}
+/* Steam play button glow */
+.steam-play-btn {
+  position: relative;
+  overflow: hidden;
+}
+.steam-play-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(255,255,255,0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.steam-play-btn:hover::after {
+  opacity: 1;
+}
+/* Selection color */
+::selection {
+  background: var(--steam-blue);
+  color: #fff;
+}
